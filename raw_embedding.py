@@ -5,8 +5,10 @@ from openai.types import CreateEmbeddingResponse
 
 load_dotenv()
 
-def create_embeddings(input:str) -> CreateEmbeddingResponse:
-    return client.embeddings.create(input=input,model="text-embedding-3-small")
+
+def create_embeddings(input: str) -> CreateEmbeddingResponse:
+    return client.embeddings.create(input=input, model="text-embedding-3-small")
+
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
