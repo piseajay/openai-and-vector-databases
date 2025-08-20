@@ -19,6 +19,7 @@ collection = chroma_client.get_or_create_collection(
 
 openai_client = OpenAI(api_key=openai_api_key)
 
+
 # =================================
 # === For initial setup -- Uncomment (below) all for the first run, and then comment it all out ===
 # =================================
@@ -61,7 +62,9 @@ for doc in documents:
 
 # Function to generate embeddings using OpenAI API
 def get_openai_embedding(text):
-    response = openai_client.embeddings.create(input=text, model="text-embedding-3-small")
+    response = openai_client.embeddings.create(
+        input=text, model="text-embedding-3-small"
+    )
     embedding = response.data[0].embedding
     print("==== Generating embeddings... ====")
     return embedding
